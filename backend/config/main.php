@@ -40,7 +40,7 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false,
             'rules' => [
                 "GET currencies" => "currency/index",
                 "GET currencies/<id:\d+>" => "currency/view"

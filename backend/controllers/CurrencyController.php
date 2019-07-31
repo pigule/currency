@@ -9,7 +9,7 @@ use yii\web\HttpException;
 class CurrencyController extends BaseRestController
 {
 
-    public $allowActions = ['index', 'view'];
+    public $allowActions = [];
     public $modelClass = Currency::class;
     public $serializer = [
         'class' => 'yii\rest\Serializer',
@@ -46,5 +46,4 @@ class CurrencyController extends BaseRestController
 
         return $currency;
     }
-
 }
