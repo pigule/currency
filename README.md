@@ -58,3 +58,35 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+```
+Запуск приложения
+1. Клонировать проект 
+git clone https://github.com/pigule/currency.git
+Перейти в папку проекта
+2. Запустить docker
+docker-compose up -d
+3. Зайти в docker
+docker exec -it currency_backend_1 bash
+4. Применить
+composer install
+5. Применить 
+php init
+6. Настроить компоненту приложения
+Скопировать
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=mysql;dbname=exchange_rates',
+            'username' => 'root',
+            'password' => 'root',
+            'charset' => 'utf8',
+        ],
+в common/main-local.php
+7. Выполнить 
+yii migrate
+8. Для записи или обновления данных в бд воспользоваться консольной командой 
+php yii currency/update
+9. Для добавления пользователя можно воспользоваться консольной командой 
+php yii user/create email@test.ru password
+Используйте токен для запросов
+```
